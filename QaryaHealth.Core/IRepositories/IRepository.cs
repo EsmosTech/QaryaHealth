@@ -9,7 +9,7 @@ namespace QaryaHealth.Core.IRepositories
     public interface IRepository<T>
     {
         Task<List<T>> GetListAsync();
-        Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate);
+        Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, object>>[] includes = null);
         Task<List<T>> GetDistinctListAsync(Expression<Func<T, bool>> predicate);
         Task<IPagedList<T>> GetPageListAsync(Expression<Func<T, bool>> predicate, int page, int pageSize);
 

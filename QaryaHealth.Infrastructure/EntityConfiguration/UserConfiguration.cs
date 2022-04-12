@@ -21,6 +21,9 @@ namespace QaryaHealth.Infrastructure.EntityConfiguration
                 .HasColumnName("name")
                 .IsRequired();
 
+            builder.Property(x => x.Address)
+                .HasColumnName("address");
+
             builder.Property(x => x.Password)
                 .HasColumnName("password")
                 .IsRequired();
@@ -34,10 +37,6 @@ namespace QaryaHealth.Infrastructure.EntityConfiguration
 
             builder.Property(x => x.Role)
               .HasColumnName("role")
-              .IsRequired();
-
-            builder.Property(x => x.BloodType)
-              .HasColumnName("blood-type")
               .IsRequired();
         }
     }

@@ -12,7 +12,7 @@ namespace QaryaHealth.Infrastructure.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Base
     {
-        protected readonly DbSet<T> _entities;
+        public readonly DbSet<T> _entities;
         private readonly QaryaHealthDbContext _dbContext;
         virtual protected IQueryable<T> _query { get => _entities; }
         public Repository(QaryaHealthDbContext qaryaHealthDbContext) 
@@ -21,9 +21,10 @@ namespace QaryaHealth.Infrastructure.Repositories
             _entities = qaryaHealthDbContext.Set<T>();
         }
         virtual public Task<List<T>> GetListAsync() => _query.Where(r => r.IsActive).ToListAsync();
-        public Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate)
+        public Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, object>>[] includes = null)
         {
-            return predicate != null ? _query.Where(r => r.IsActive).Where(predicate).ToListAsync() :
+            IQueryable<T> query  = Include(includes);
+            return predicate != null ? query.Where(r => r.IsActive).Where(predicate).ToListAsync() :
               _entities.ToListAsync();
         }
         

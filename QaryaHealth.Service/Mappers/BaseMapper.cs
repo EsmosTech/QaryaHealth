@@ -25,6 +25,8 @@ namespace QaryaHealth.Service.Mappers
                             .ReverseMap();
 
                             cfg.CreateMap<User, UserDto>().ReverseMap();
+                            cfg.CreateMap<Lab, LabDto>().ReverseMap();
+                            cfg.CreateMap<Volunteer, VolunteerDto>().ReverseMap();
 
                         }).CreateMapper();
                     }

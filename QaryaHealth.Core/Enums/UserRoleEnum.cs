@@ -4,6 +4,7 @@
     {
         Admin,
         Manager,
-        Volunteer
+        Volunteer,
+        Lab
     }
 }

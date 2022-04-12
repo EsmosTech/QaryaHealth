@@ -28,11 +28,17 @@ namespace QaryaHealth.API.Helpers
         {
             services.AddDbContext<QaryaHealthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUploadImageRepository, UploadImageRepository>();
+            services.AddScoped<ILabRepository, LabRepository>();
+            services.AddScoped<IVolunteerRepository, VolunteerRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUploadImageService, UploadImageService>();
+            services.AddTransient<ILabService, LabService>();
+            services.AddTransient<IVolunteerService, VolunteerService>();
         }
     }
 }

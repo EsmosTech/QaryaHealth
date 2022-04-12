@@ -23,6 +23,7 @@ namespace QaryaHealth.Service.Implementations
         public virtual async Task<bool> CreateAsync(DTO model)
         {
             var entity = model.ToEntity<Entity, DTO>();
+            entity.IsActive = true;
             _repository.Add(entity);
             return await _repository.SaveChangesAsync();
         }
