@@ -3,7 +3,7 @@ using System;
 
 namespace QaryaHealth.Service.Dtos
 {
-    public class VolunteerDto : BaseDto
+    public class VolunteerDto : UserDto
     {
         public int UserId { get; set; }
         public BloodType BloodType { get; set; }

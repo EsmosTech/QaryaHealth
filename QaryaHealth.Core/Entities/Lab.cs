@@ -11,7 +11,7 @@ namespace QaryaHealth.Core.Entities
         public DateTime StartWorkingHour { get; set; }
         public DateTime EndWorkingHour { get; set; }
 
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
         public UploadImage Image { get; set; }
     }
 }

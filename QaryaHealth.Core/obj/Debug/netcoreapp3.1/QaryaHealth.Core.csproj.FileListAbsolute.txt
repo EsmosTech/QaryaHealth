@@ -6,4 +6,3 @@ C:\Users\eslam.heikal\Desktop\Home Work\Bank of blood\Coding\QaryaHealth\QaryaHe
 C:\Users\eslam.heikal\Desktop\Home Work\Bank of blood\Coding\QaryaHealth\QaryaHealth.Core\obj\Debug\netcoreapp3.1\QaryaHealth.Core.csproj.CoreCompileInputs.cache
 C:\Users\eslam.heikal\Desktop\Home Work\Bank of blood\Coding\QaryaHealth\QaryaHealth.Core\obj\Debug\netcoreapp3.1\QaryaHealth.Core.dll
 C:\Users\eslam.heikal\Desktop\Home Work\Bank of blood\Coding\QaryaHealth\QaryaHealth.Core\obj\Debug\netcoreapp3.1\QaryaHealth.Core.pdb
-C:\Users\eslam.heikal\Desktop\Home Work\Bank of blood\Coding\QaryaHealth\QaryaHealth.Core\obj\Debug\netcoreapp3.1\QaryaHealth.Core.csprojAssemblyReference.cache

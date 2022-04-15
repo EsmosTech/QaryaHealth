@@ -34,10 +34,12 @@ namespace QaryaHealth.Service.Implementations
             return await _repository.SaveChangesAsync();
         }
 
-        public virtual async Task<bool> SoftDeleteAsync(DTO model)
+        public virtual async Task<bool> SoftDeleteAsync(int id)
         {
-            Entity entity = model.ToEntity<Entity, DTO>();
-            _repository.Delete(entity);
+            Entity entity = await _repository.GetAsync(id);
+            entity.IsActive = false;
+
+            _repository.Update(entity);
             return await _repository.SaveChangesAsync();
         }
         public virtual async Task<bool> HardDeleteAsync(DTO model)

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QaryaHealth.Infrastructure;
 
 namespace QaryaHealth.Infrastructure.Migrations
 {
     [DbContext(typeof(QaryaHealthDbContext))]
-    partial class QaryaHealthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220415161402_add lab status")]
+    partial class addlabstatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

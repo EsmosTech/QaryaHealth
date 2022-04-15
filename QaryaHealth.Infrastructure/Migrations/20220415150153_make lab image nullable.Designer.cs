@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QaryaHealth.Infrastructure;
 
 namespace QaryaHealth.Infrastructure.Migrations
 {
     [DbContext(typeof(QaryaHealthDbContext))]
-    partial class QaryaHealthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220415150153_make lab image nullable")]
+    partial class makelabimagenullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,9 +123,6 @@ namespace QaryaHealth.Infrastructure.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int")
                         .HasColumnName("role");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

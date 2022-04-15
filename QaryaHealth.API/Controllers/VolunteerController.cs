@@ -25,9 +25,9 @@ namespace QaryaHealth.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<VolunteerDto> GetById(int id)
+        public async Task<VolunteerModel> GetById(int id)
         {
-            return await _volunteerService.GetAsync(id);
+            return await _volunteerService.GetVolunteerModelAsync(id);
         }
 
         [HttpPost]
@@ -42,16 +42,10 @@ namespace QaryaHealth.API.Controllers
             return await _volunteerService.UpdateAsync(VolunteerDto);
         }
 
-        [HttpDelete("soft-delete")]
-        public async Task<bool> SoftDelete(VolunteerDto VolunteerDto)
+        [HttpDelete("soft-delete/{id}")]
+        public async Task<bool> SoftDelete(int id)
         {
-            return await _volunteerService.SoftDeleteAsync(VolunteerDto);
-        }
-
-        [HttpDelete("hard-delete")]
-        public async Task<bool> HardDelete(VolunteerDto VolunteerDto)
-        {
-            return await _volunteerService.HardDeleteAsync(VolunteerDto);
+            return await _volunteerService.SoftDeleteAsync(id);
         }
     }
 }

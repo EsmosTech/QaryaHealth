@@ -13,7 +13,7 @@ namespace QaryaHealth.Service.Interfaces
         Task<bool> CreateAsync(T model);
         Task<bool> UpdateAsync(T model);
         
-        Task<bool> SoftDeleteAsync(T model);
+        Task<bool> SoftDeleteAsync(int id);
         Task<bool> HardDeleteAsync(T model);
         
         Task<T> GetAsync(int id);

@@ -18,16 +18,10 @@ namespace QaryaHealth.API.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
-        public async Task<List<UserDto>> Get()
+        [HttpPost("login")]
+        public async Task<UserDto> Login(UserLoginModel loginModel)
         {
-            return await _userService.GetListAsync();
-        }
-
-        [HttpGet("{id}")]
-        public async Task<UserDto> GetById(int id)
-        {
-            return await _userService.GetAsync(id);
+            return await _userService.LoginAsync(loginModel);
         }
 
         [HttpGet("paged")]
@@ -42,28 +36,21 @@ namespace QaryaHealth.API.Controllers
             return await _userService.CreateAsync(userDto);
         }
 
-        [HttpPost("login")]
-        public async Task<UserDto> Login(UserLoginModel loginModel)
-        {
-            return await _userService.LoginAsync(loginModel);
-        }
-
         [HttpPut]
         public async Task<bool> Update(UserDto userDto)
         {
             return await _userService.UpdateAsync(userDto);
         }
 
-        [HttpDelete("soft-delete")]
-        public async Task<bool> SoftDelete(UserDto userDto)
+        [HttpGet("{id}")]
+        public async Task<UserDto> GetById(int id)
         {
-            return await _userService.SoftDeleteAsync(userDto);
+            return await _userService.GetAsync(id);
         }
-
-        [HttpDelete("hard-delete")]
-        public async Task<bool> HardDelete(UserDto userDto)
+        [HttpDelete("soft-delete/{id}")]
+        public async Task<bool> SoftDelete(int id)
         {
-            return await _userService.HardDeleteAsync(userDto);
+            return await _userService.SoftDeleteAsync(id);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace QaryaHealth.Service.Interfaces
 {
     public interface IVolunteerService : IBaseService<VolunteerDto, Volunteer>
     {
+        Task<VolunteerModel> GetVolunteerModelAsync(int id);
         Task<PagedListResult<VolunteerModel>> GetvolunteerModelsAsync(BloodType bloodType, QueryParams queryParams);
     }
 }

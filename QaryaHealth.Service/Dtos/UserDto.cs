@@ -9,5 +9,6 @@ namespace QaryaHealth.Service.Dtos
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public UserRole Role { get; set; }
+        public UserStatus Status { get; set; }
     }
 }

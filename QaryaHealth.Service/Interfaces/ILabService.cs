@@ -8,6 +8,7 @@ namespace QaryaHealth.Service.Interfaces
 {
     public interface ILabService : IBaseService<LabDto, Lab>
     {
+        Task<LabModel> GetLabModelAsync(int id);
         Task<PagedListResult<LabModel>> GetLabModelsAsync(QueryParams queryParams);
     }
 }

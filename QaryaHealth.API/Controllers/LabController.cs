@@ -24,9 +24,9 @@ namespace QaryaHealth.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<LabDto> GetById(int id)
+        public async Task<LabModel> GetById(int id)
         {
-            return await _labService.GetAsync(id);
+            return await _labService.GetLabModelAsync(id);
         }
 
         [HttpPost]
@@ -41,16 +41,10 @@ namespace QaryaHealth.API.Controllers
             return await _labService.UpdateAsync(labDto);
         }
 
-        [HttpDelete("soft-delete")]
-        public async Task<bool> SoftDelete(LabDto labDto)
+        [HttpDelete("soft-delete/{id}")]
+        public async Task<bool> SoftDelete(int id)
         {
-            return await _labService.SoftDeleteAsync(labDto);
-        }
-
-        [HttpDelete("hard-delete")]
-        public async Task<bool> HardDelete(LabDto labDto)
-        {
-            return await _labService.HardDeleteAsync(labDto);
+            return await _labService.SoftDeleteAsync(id);
         }
     }
 }
